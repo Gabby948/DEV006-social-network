@@ -1,0 +1,135 @@
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F1E7CE;
+}
+
+.container {
+    
+    /* background-color: #CD2054; */
+    background: linear-gradient(#CD2054, #C67B1D);
+    width: 412px;
+    height: 800px;
+    border-radius: 20px 20px 20px 20px;
+    position: relative;
+        
+}
+
+#root{
+ 
+   /* background-color: #CD2054; */
+   background: linear-gradient(#CD2054, #C67B1D);
+   width: 412px;
+   height: 800px;
+   border-radius: 20px 20px 20px 20px;
+   display: block;
+   padding-top: 300px;
+   padding-left: 90px;
+}
+
+p {
+  color:#FFFFFF;
+}
+/* email */
+.email-input {
+  background-color: #D9D9D9;
+  width: 250px;
+  height: 35px;
+  padding: 5px;
+  margin-bottom:10px;
+  border:none;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+/* Password */
+.password-input {
+
+  background-color: #D9D9D9;
+  width: 250px;
+  height: 35px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border:none;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+}
+
+
+
+ /* Login*/
+.login-button {
+  
+  display: block;
+  border-radius: 20px 20px 20px 20px;
+  margin-top: 10px;
+  width: 183px;
+  height: 37px;
+  padding: 10px 25px;
+  margin-top: 20px;
+  margin-left: 25px;
+  background-color: #D9D9D9;
+  border: none;
+  color: #3B3945;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.login-button:hover {
+  background-color: #49081B;
+  color: white;
+}
+
+
+
+/* Google */
+.google-button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  margin-top:20px;
+  margin-left: 25px;
+  background-image: url("https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png");
+  background-color: #F5F5F5;
+  border: none;
+  width: 183px;
+  height: 37px;
+  color: #3B3945;
+  cursor: pointer;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+  
+}
+
+.google-button:hover {
+  background-color: #4ec0e7;
+  color: white;
+}
+
+div { /*opcional- revisar luego*/
+  width: 412px;
+  height: 800px;
+  border-radius: 20px 20px 20px 20px;
+  display: flex;
+  padding-top: 100px;
+  padding-left: 100px;
+     
+}
+.custom-text{
+  color: #D9D9D9;
+  margin-top: 45px;
+  margin-left:25px;
+}
