@@ -1,61 +1,292 @@
 
-*{
+ *{
     margin: 0;
     padding:0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-}
+ } 
 
-body{
+ body {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #F1E7CE;
+} 
+
+/*HOME ------------------------------------------------------------------------*/
+.home-title{
+  
+  display: flex;
+  color: #CAC5B1;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 80px;
+  padding-left: 5px;
+  background-color: #0A1E27;
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+  margin-left: 5px;
+  border-radius: 100%;
+  border: 3px solid #D9D9D9;
+  width: 220px;
+  height: 220px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position:relative;
+  
+   
+}
+.home-title {
+  position: absolute; 
+  top: 100px; 
+  left: 100px; 
 }
 
-.container {
-    
-    /* background-color: #CD2054; */
-    background: linear-gradient(#CD2054, #C67B1D);
-    width: 412px;
-    height: 800px;
-    border-radius: 20px 20px 20px 20px;
-    position: relative;
-        
+
+.home-back{
+  
+  border-radius: 20px 20px 20px 20px;
+  width: 183px;
+  height: 37px;
+  padding: 10px 25px;
+  margin-top: 60px;
+  margin-left: -80px;
+  background-color: #D9D9D9;
+  border: none;
+  color: #3B3945;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+  cursor: pointer;
+  font-size: 15px;
+  
+  
+}
+.home-back:hover {
+  background-color: #49081B;
+  color: white;
 }
 
-#root{
+
+/*PRINCIPAL--------------------------------------------------------*/
+ #root{ 
  
-   /* background-color: #CD2054; */
-   background: linear-gradient(#CD2054, #C67B1D);
+   
+   background: linear-gradient(#CD2054, #C67B1D); 
    width: 412px;
    height: 800px;
    border-radius: 20px 20px 20px 20px;
-   display: block;
-   padding-top: 300px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 400px;
    padding-left: 90px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   position: relative;
+} 
+
+/* .box-class {
+
+  width:276px;
+  height:455px;
+  background:#0A1E27;
+  border-radius: 20px 20px 20px 20px;
+  opacity: 0.5;
+  display: flex;
+  padding-top: 150px;
+  padding-left: 50px;
+  float:inherit;
+ 
+} */
+
+
+ /* .title-text {
+
+  color: #CAC5B1;
+  font-size: 25px;
+  padding-top: 90px;
+  padding-left: 28px;
+  background-color: #0A1E27;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 100%;
+  border: 3px solid #D9D9D9;
+  width: 220px;
+  height: 220px;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}  */
+
+/*CAMBIO 1*/
+.title-text {
+  color: #CAC5B1;
+  font-size: 25px;
+  padding-top: 90px;
+  padding-left: 28px;
+  background-color: #0A1E27;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: -150px;
+  border-radius: 100%;
+  border: 3px solid #D9D9D9;
+  width: 220px;
+  height: 220px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative; 
 }
 
-p {
-  color:#FFFFFF;
+.title-text {
+  position: absolute; 
+  top: 100px; 
+  left: 250px; 
 }
-/* email */
+
+
+/* EMAIL---------------------------------------------------------------- */
 .email-input {
   background-color: #D9D9D9;
   width: 250px;
   height: 35px;
   padding: 5px;
-  margin-bottom:10px;
+  margin-bottom:20px;
   border:none;
   border-radius: 20px 20px 20px 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+#email-input  {
+  /* display: flex; */
+  color: #D9D9D9;
+  align-items: flex-start;
+  font-size: 15px;
+  margin-top:-10px;
+  /* margin-bottom: 0.5vh; */
+}
 
-/* Password */
+
+/* PASSWORD----------------------------------------------------------------- */
 .password-input {
+
+  background-color: #D9D9D9;
+  width: 250px;
+  height: 35px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border:none;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+}
+.password-input label {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.8rem;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+
+
+ /* LOG IN-----------------------------------------------*/
+.login-button {
+  
+  display: block;
+  border-radius: 20px 20px 20px 20px;
+  width: 183px;
+  height: 40px;
+  padding: 10px 25px;
+  margin-top: 20px;
+  margin-left: 25px;
+  background-color: #D9D9D9;
+  border: none;
+  color: #3B3945;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.login-button:hover {
+  background-color: #49081B;
+  color: white;
+}
+
+
+
+
+/* GOOGLE BUTTON --------------------------------------------------- */
+.google-button {
+
+  display: block;
+  padding: 10px 20px;
+  margin-top:30px;
+  margin-left: 15px;
+  background-color: #F5F5F5;
+  border: none;
+  width: 200px;
+  height: 40px;
+  color: #3B3945;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+}
+
+.google-button:hover {
+  background-color: #4ec0e7;
+  color: white;
+}
+
+/* .googleButton {
+  
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-image: url('/imagenes/googleIcon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+} */
+.btnGoogle img {
+
+  background-image: url('/imagenes/googleIcon.png');
+  width: 1.5rem; /* 18dp width */
+  height: 1.5rem; /* 18dp height */
+  margin-right: 1.5rem; /* 24dp spacing between logo and text */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+/* div { opcional- revisar luego */
+  /* width: 412px;
+  height: 800px;
+  border-radius: 20px 20px 20px 20px;
+  display: flex;
+  padding-top: 100px;
+  padding-left: 100px;
+     
+} */
+/* .custom-text{
+  color: #D9D9D9;
+  position: relative;
+  top: -180px;
+  left: 25px;
+} */
+
+/*SING UP*/ /*---------------------------------------------------------*/
+
+.create-account {
+
+  margin-left: 40px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+
+.confirm-password-input{
 
   background-color: #D9D9D9;
   width: 250px;
@@ -65,43 +296,14 @@ p {
   border:none;
   border-radius: 20px 20px 20px 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  
+
 }
 
-
-
- /* Login*/
-.login-button {
-  
-  display: block;
-  border-radius: 20px 20px 20px 20px;
-  margin-top: 10px;
-  width: 183px;
-  height: 37px;
-  padding: 10px 25px;
-  margin-top: 20px;
-  margin-left: 25px;
-  background-color: #D9D9D9;
-  border: none;
-  color: #3B3945;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.login-button:hover {
-  background-color: #49081B;
-  color: white;
-}
-
-
-
-/* Google */
-.google-button {
-  display: block;
-  margin-top: 10px;
+.signup-button {
+  /* display: block; */
   padding: 10px 20px;
   margin-top:20px;
   margin-left: 25px;
-  background-image: url("https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png");
   background-color: #F5F5F5;
   border: none;
   width: 183px;
@@ -111,25 +313,10 @@ p {
   border-radius: 20px 20px 20px 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   
-  
 }
 
-.google-button:hover {
-  background-color: #4ec0e7;
+.signup-button:hover {
+  background-color: #49081B;
   color: white;
 }
 
-div { /*opcional- revisar luego*/
-  width: 412px;
-  height: 800px;
-  border-radius: 20px 20px 20px 20px;
-  display: flex;
-  padding-top: 100px;
-  padding-left: 100px;
-     
-}
-.custom-text{
-  color: #D9D9D9;
-  margin-top: 45px;
-  margin-left:25px;
-}
