@@ -1,12 +1,14 @@
 import home from './assets/home.js';
 import login from './components/login.js';
 import signup from './components/signup.js';
+import post from './components/post.js';
 import error from './assets/error.js';
 
 const routes = [
   { path: '/login', component: login },
   { path: '/', component: home },
   { path: '/signup', component: signup },
+  { path: '/post', component: post },
   { path: '/error', component: error },
 ];
 

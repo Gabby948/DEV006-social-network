@@ -1,5 +1,6 @@
 export default function signup(navigateTo) {
   const rootElement = document.createElement('aside');
+  rootElement.classList.add('root-signup');
 
   const titleLabel = document.createElement('h1');
   titleLabel.textContent = 'WATARIDORI';
