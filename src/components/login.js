@@ -9,7 +9,7 @@ export default function login(navigateTo) {
   const loginButton = document.createElement('button');
   const googleButton = document.createElement('button');
   const textElement = document.createElement('span');
-  const iconGoogle = document.createElement('img');
+  // const iconGoogle = document.createElement('img');
   const emailContainer = document.createElement('div');
   const emailLabel = document.createElement('label');
   const emailInput = document.createElement('input');
