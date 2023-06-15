@@ -1,58 +1,57 @@
 import {
-  collection, addDoc, getDocs, doc as docMethod, updateDoc, deleteDoc, deleteField,
+  collection, addDoc, getDocs, doc as docMethod, updateDoc, deleteDoc,
 } from 'firebase/firestore';
-import { db } from '../assets/firebaseconfig';
+import { db, auth } from '../assets/firebaseconfig';
 
 export default function posts(navigateTo) {
   const rootElement = document.createElement('section');
-  rootElement.classList.add('root-post');
-
   const header = document.createElement('header');
-  header.classList.add('header');
-
   const headerText = document.createElement('span');
-
-  headerText.textContent = 'WATARIDORI';
-  header.appendChild(headerText);
-
   const homeButton = document.createElement('button');
-  homeButton.classList.add('header-icon');
-  homeButton.addEventListener('click', () => {
-    navigateTo('/');
-  });
-
   const homeIcon = document.createElement('i');
-  homeIcon.classList.add('fas', 'fa-home');
-
-  homeButton.appendChild(homeIcon);
-
-  header.appendChild(homeButton);
-
-  rootElement.appendChild(header);
-
   const modal = document.createElement('div');
-  modal.classList.add('modal');
   const modalContent = document.createElement('div');
-  modalContent.classList.add('modal-content');
-
   const textInput = document.createElement('textarea');
+  const postButton = document.createElement('button');
+  const createPostButton = document.createElement('button');
+  const footer = document.createElement('footer');
+  const footerText = document.createElement('p');
+
+  rootElement.classList.add('root-post');
+  header.classList.add('header');
+  homeButton.classList.add('header-icon');
+  homeIcon.classList.add('fas', 'fa-home');
+  modal.classList.add('modal');
   textInput.classList.add('post-text-input');
-  textInput.placeholder = 'Write a comment...';
+  modalContent.classList.add('modal-content');
+  postButton.classList.add('post-button');
+  createPostButton.classList.add('create-post-button');
+  footer.classList.add('footer');
+  footerText.classList.add('footerText');
+
   textInput.id = 'textPost';
 
-  const postButton = document.createElement('button');
-  postButton.classList.add('post-button');
+  headerText.textContent = 'WATARIDORI';
   postButton.textContent = 'Post';
+  createPostButton.textContent = 'Create a Post';
 
+  textInput.placeholder = 'Write a comment...';
+
+  header.appendChild(headerText);
+  header.appendChild(homeButton);
+  homeButton.appendChild(homeIcon);
   modalContent.appendChild(textInput);
   modalContent.appendChild(postButton);
   modal.appendChild(modalContent);
-
-  const createPostButton = document.createElement('button');
-  createPostButton.textContent = 'Create a Post';
-  createPostButton.classList.add('create-post-button');
+  rootElement.appendChild(header);
   rootElement.appendChild(createPostButton);
   rootElement.appendChild(modal);
+  footer.appendChild(footerText);
+  rootElement.appendChild(footer);
+
+  homeButton.addEventListener('click', () => {
+    navigateTo('/');
+  });
 
   function openModal() {
     modal.style.display = 'block';
@@ -63,33 +62,33 @@ export default function posts(navigateTo) {
   postContainer.classList.add('post-container');
   rootElement.appendChild(postContainer);
 
-  function createPost() {
-    postButton.addEventListener('click', createPost);
-    const postText = textInput.value;
+  // function createPost() {
+  //   postButton.addEventListener('click', createPost);
+  //   const postText = textInput.value;
 
-    // const square = document.createElement('div');
-    // square.classList.add('post-square');
+  // const square = document.createElement('div');
+  // square.classList.add('post-square');
 
-    // const postContent = document.createElement('p');
-    // postContent.textContent = postText;
+  // const postContent = document.createElement('p');
+  // postContent.textContent = postText;
 
-    // likeIcon.addEventListener('click', () => {
-    //   // const currentLikes = parseInt(likeCount.textContent);
-    //   likeCount.textContent = currentLikes + 1;
-    // });
+  // likeIcon.addEventListener('click', () => {
+  //   // const currentLikes = parseInt(likeCount.textContent);
+  //   likeCount.textContent = currentLikes + 1;
+  // });
 
-    // postContainer.appendChild(square);
+  // postContainer.appendChild(square);
 
-    // Hacer scroll hasta el nuevo cuadrado
+  // Hacer scroll hasta el nuevo cuadrado
 
-    // Eliminar cuadrados anteriores si hay más de 5
-    // const squares = postContainer.getElementsByClassName('post-square');
-    // if (squares.length > 5) {
-    //   for (let i = 0; i < squares.length - 5; i += 1) {
-    //     squares[i].remove();
-    //   }
-    // }
-  }
+  // Eliminar cuadrados anteriores si hay más de 5
+  // const squares = postContainer.getElementsByClassName('post-square');
+  // if (squares.length > 5) {
+  //   for (let i = 0; i < squares.length - 5; i += 1) {
+  //     squares[i].remove();
+  //   }
+  // }
+  // }
   postButton.addEventListener('click', async () => {
     const textContent = document.getElementById('textPost');
     const docRef = await addDoc(collection(db, 'posts'), {
@@ -114,30 +113,30 @@ export default function posts(navigateTo) {
       }
 
       const postContent = document.createElement('p');
-      postContent.textContent = doc.data().content;
-
       const editIcon = document.createElement('i');
-      editIcon.classList.add('fas', 'fa-edit');
       const deleteIcon = document.createElement('i');
-      deleteIcon.classList.add('fas', 'fa-trash-alt');
       const likeIcon = document.createElement('i');
-      likeIcon.classList.add('fas', 'fa-heart');
       const likeCount = document.createElement('span');
+
+      editIcon.classList.add('fas', 'fa-edit');
+      deleteIcon.classList.add('fas', 'fa-trash-alt');
+      likeIcon.classList.add('fas', 'fa-heart');
       likeCount.textContent = doc.data().likes.toString();
       likeCount.classList.add('like-count');
+
+      postContent.textContent = doc.data().content;
+
+      postSquare.setAttribute('data-post-id', doc.id);
 
       postSquare.appendChild(postContent);
       postSquare.appendChild(editIcon);
       postSquare.appendChild(deleteIcon);
       postSquare.appendChild(likeIcon);
       postSquare.appendChild(likeCount);
-
       // postContainer.insertBefore(postSquare, postContainer.firstChild);
-
       postContainer.appendChild(postSquare);
-      postSquare.scrollIntoView({ behavior: 'smooth', block: 'end' });// revisar o eliminar
 
-      postSquare.setAttribute('data-post-id', doc.id);
+      // postSquare.scrollIntoView({ behavior: 'smooth', block: 'end' });// revisar o eliminar
 
       editIcon.addEventListener('click', () => {
         postContent.contentEditable = true;
@@ -179,14 +178,8 @@ export default function posts(navigateTo) {
     });
 
     textContent.value = '';
-    modal.style.display = 'none';
+    modal.style.display = 'none'; // Realiza la accion que el modal desaparezca
   });
-  const footer = document.createElement('footer');
-  footer.classList.add('footer');
-  const footerText = document.createElement('p');
-  footerText.classList.add('footerText');
-  footer.appendChild(footerText);
-  rootElement.appendChild(footer);
 
   return rootElement;
 }
