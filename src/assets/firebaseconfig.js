@@ -1,5 +1,9 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
+import {
+  getFirestore, collection, addDoc, getDocs,  updateDoc, deleteDoc, deleteField,
+} from 'firebase/firestore';
+import { doc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAgjvB9P7b0T2J6m-P-ks_VqRCb86b9ZIA',
@@ -15,7 +19,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
+const colRef = collection(db, 'Posts');
 // const analytics = getAnalytics(app);
 // const auth = getAuth();
 
-export { auth, provider };
+export {
+  auth, provider, db, colRef,
+};
