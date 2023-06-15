@@ -522,11 +522,10 @@
   width: 500px;
   height: 25px;
   /* padding-left: 135px; */
-  padding-top: 25px;
-  position: fixed;
+  padding-top: 5px;
   /* position: relative; */
-  left: -30px;
-  top: 700px;
+  /* left: -30px;
+  top: 10px; */
 }
 .post-container {
   display: grid;
