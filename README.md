@@ -32,11 +32,11 @@ Through the Wataridori application, a proposal is generated so that the user can
 
 ## Work Tools
 
- HTML
- CSS
- Working SPA (Single Page Application)
- Web APIs
- JavaScript
- Firebase
+ - HTML
+ - CSS
+ - Working SPA (Single Page Application)
+ - Web APIs
+ - JavaScript
+ - Firebase
 
 
