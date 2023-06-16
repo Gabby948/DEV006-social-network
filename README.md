@@ -19,12 +19,14 @@ Through the Wataridori application, a proposal is generated so that the user can
 ## Low Fidelity Prototypes.
 
 
- C:\Users\InforSys\Documents\DEV006-social-network\imagenes\wt 1.png
+![image](https://github.com/Gabby948/DEV006-social-network/assets/125084134/9fcca542-f1d8-4775-99b7-f025b6317662)
+
 
 ### High Fidelity Prototypes.
 
 
- C:\Users\InforSys\Documents\DEV006-social-network\imagenes\wt 2.png
+![image](https://github.com/Gabby948/DEV006-social-network/assets/125084134/c853bcfa-3eb3-4708-9c49-6d8fc9dd4f4b)
+
 
 
 
